@@ -14,6 +14,7 @@
 		17ED56D4220B55790036404D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17ED56D2220B55790036404D /* LaunchScreen.storyboard */; };
 		17ED56DF220B55790036404D /* Q_learningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ED56DE220B55790036404D /* Q_learningTests.swift */; };
 		17ED56EA220B55790036404D /* Q_learningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ED56E9220B55790036404D /* Q_learningUITests.swift */; };
+		17F49CAE220E4B5C009727E9 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F49CAD220E4B5C009727E9 /* Agent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		17ED56E5220B55790036404D /* Q-learningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Q-learningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17ED56E9220B55790036404D /* Q_learningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Q_learningUITests.swift; sourceTree = "<group>"; };
 		17ED56EB220B55790036404D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F49CAD220E4B5C009727E9 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				17ED56C9220B55780036404D /* AppDelegate.swift */,
 				17ED56CB220B55780036404D /* ViewController.swift */,
+				17F49CAD220E4B5C009727E9 /* Agent.swift */,
 				17ED56CD220B55780036404D /* Main.storyboard */,
 				17ED56D0220B55790036404D /* Assets.xcassets */,
 				17ED56D2220B55790036404D /* LaunchScreen.storyboard */,
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F49CAE220E4B5C009727E9 /* Agent.swift in Sources */,
 				17ED56CC220B55780036404D /* ViewController.swift in Sources */,
 				17ED56CA220B55780036404D /* AppDelegate.swift in Sources */,
 			);
