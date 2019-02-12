@@ -39,8 +39,8 @@ class ViewController: UIViewController
     
     @IBAction func clickIr(_ sender: UIButton)
     {
-        var origen:Int = Int(textFieldOrigen.text!)!
-        var destino:Int = Int(textFieldDestino.text!)!
+        let origen:Int = Int(textFieldOrigen.text!)!
+        let destino:Int = Int(textFieldDestino.text!)!
         
         let mejorCamino:[Int] = agente007.obtenerMejorCamino(source: origen, destino: destino)
         print(mejorCamino)
@@ -83,13 +83,10 @@ class ViewController: UIViewController
              delay = delay + 400
             
         }//Fin for
-        
-        labelAgenteEstado.text = "Agente listo!"
+        print("El entrenamiento ha terminado")
+        self.labelAgenteEstado.text = "Agente listo!"
         
     }//Fin funcion animacion
-    
-    
-
 
 }//Fin clase viewController
 
