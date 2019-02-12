@@ -66,27 +66,49 @@ class ViewController: UIViewController
         let duration = 0.4
         var nameimage = ""
         
-        for numero in steps
-        {
-            
-             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay), execute:{
-                 UIView.animate(withDuration: duration, animations: {
-                     nameimage = "pos\(numero)"
-                     self.imageView.image = UIImage(named: nameimage)
-                     print("\(nameimage)")
-                     self.labelAgenteEstado.text = "Agente entrenando..."
-                 
-                 })//Fin animate
-             })//Fin dispatchQueue
-             
-             //Aumentar el dalay
-             delay = delay + 400
-            
-        }//Fin for
-        print("El entrenamiento ha terminado")
-        self.labelAgenteEstado.text = "Agente listo!"
+        animate(duration: duration, indice: 0, steps: steps, delay: delay)
+        
+//        for numero in steps{
+//
+//             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay), execute:{
+//                 UIView.animate(withDuration: duration, animations: {
+//                     nameimage = "pos\(numero)"
+//                     self.imageView.image = UIImage(named: nameimage)
+//                     print("\(nameimage)")
+//                     self.labelAgenteEstado.text = "Agente entrenando..."
+//
+//                 })//Fin animate
+//             })//Fin dispatchQueue
+//
+//             //Aumentar el dalay
+//             delay = delay + 400
+//
+//        }//Fin for
+//        print("El entrenamiento ha terminado")
+//        self.labelAgenteEstado.text = "Agente listo!"
         
     }//Fin funcion animacion
+    
+    func animate(duration:Double, indice: Int, steps: [Int], delay: Int){
+        if(indice < steps.count){
+            let numero = steps[indice]
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(delay), execute: {
+                UIView.animate(withDuration: duration, animations: {
+                    let nameimage = "pos\(numero)"
+                    self.imageView.image = UIImage(named: nameimage)
+                    print("\(nameimage)")
+                    self.labelAgenteEstado.text = "Agente entrenando..."
+                }, completion: {
+                    (finished: Bool) in
+                    self.animate(duration: duration, indice: indice + 1, steps: steps, delay: delay + 400)
+                }) //end animate
+            })//end asyncAfter
+        } //end if
+        else{
+            print("El entrenamiento ha terminado")
+            self.labelAgenteEstado.text = "Agente listo!"
+        } //end else
+    } //end animate
 
 }//Fin clase viewController
 
