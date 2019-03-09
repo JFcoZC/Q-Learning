@@ -28,11 +28,17 @@ class ViewController: UIViewController {
         // Entrenar al agente
         agente007.TrainOneEpisodeQlearning(root: rootRoom)
         // Animar pasos de entrenamiento
-        animacionLista(steps: agente007.actionsDoneByAgent)
+        if(episodios == 1){
+          animacionLista(steps: agente007.actionsDoneByAgent)
+        } //end if
+        //animacionLista(steps: agente007.actionsDoneByAgent)
         // Imprimir memoria en consola
         agente007.printMemory()
     } // Fin funcionEntrenar
 
+    @IBAction func endEditing(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     @IBAction func clickIr(_: UIButton) {
         let origen: Int = Int(textFieldOrigen.text!)!
         let destino: Int = Int(textFieldDestino.text!)!
@@ -48,8 +54,9 @@ class ViewController: UIViewController {
     } // Fin funcion viewDidLoad
 
     func animacionLista(steps: [Int]) {
+        
         let delay = 0
-        let duration = 0.4
+        let duration = 0.1
         animate(duration: duration, indice: 0, steps: steps, delay: delay)
     } // Fin funcion animacion
 
@@ -64,7 +71,7 @@ class ViewController: UIViewController {
                     self.labelAgenteEstado.text = "Agente entrenando..."
                 }, completion: {
                     (_: Bool) in
-                    self.animate(duration: duration, indice: indice + 1, steps: steps, delay: delay + 400)
+                    self.animate(duration: duration, indice: indice + 1, steps: steps, delay: delay + 100)
                 }) // end animate
             }) // end asyncAfter
         } // end if

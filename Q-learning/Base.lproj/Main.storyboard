@@ -259,6 +259,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qfn-7a-V8G" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="0k3-qC-DuF"/>
                             <constraint firstItem="Op2-hM-Onw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7da-rr-kFX"/>
@@ -274,6 +275,9 @@
                             <constraint firstItem="Yqr-vP-yut" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.25" id="wdQ-fK-4qB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PLJ-bg-uV0" appends="YES" id="LLl-4N-YUX"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Op2-hM-Onw" id="M0J-dN-D5h"/>
@@ -284,6 +288,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="PLJ-bg-uV0">
+                    <connections>
+                        <action selector="endEditing:" destination="BYZ-38-t0r" id="ObD-Av-B9t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
