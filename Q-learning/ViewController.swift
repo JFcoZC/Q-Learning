@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     } // Fin funcion viewDidLoad
 
     func animacionLista(steps: [Int]) {
+        var shortSteps: [Int] = []
         
         let delay = 0
         let duration = 0.1
